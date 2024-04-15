@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
+import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
 import { CoursesModule } from './courses/courses.module';
 import { CategoryModule } from './category/category.module';
@@ -22,6 +24,7 @@ import { Chapter } from './chapter/entities/chapter.entity';
 import { WishList } from './wish_list/entities/wish_list.entity';
 import { EnrollCourse } from './enroll_course/entities/enroll_course.entity';
 dotenv.config();
+
 
 @Module({
   imports: [
@@ -48,6 +51,7 @@ dotenv.config();
     UserRoleModule,
     UsersModule,
     WishListModule
+
   ],
   controllers: [],
   providers: [],
