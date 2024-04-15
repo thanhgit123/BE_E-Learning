@@ -1,16 +1,20 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT),
-      username: 'root',
-      password: 'Doanxem.123',
-      database: 'e-learning',
+      host:"localhost", 
+      port: 3306,
+      username: "root",
+      password: "",
+      database: "elearning",
       entities: [],
-    })
+    }),
+    AuthModule,
+    UsersModule
   ],
   controllers: [],
   providers: [],
