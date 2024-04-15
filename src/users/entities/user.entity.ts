@@ -1,7 +1,8 @@
 
+import { Blog } from 'src/blog/entities/blog.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
-@Entity()
+@Entity({name:'users'})
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -34,5 +35,8 @@ export class User {
 
   @Column({ nullable: true }) 
   active: number;
+
+  @OneToMany(()=>Blog,(item)=>item.user)
+  blog:Blog
 }
 

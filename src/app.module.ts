@@ -23,6 +23,8 @@ import { Category } from './category/entities/category.entity';
 import { Chapter } from './chapter/entities/chapter.entity';
 import { WishList } from './wish_list/entities/wish_list.entity';
 import { EnrollCourse } from './enroll_course/entities/enroll_course.entity';
+import { Blog } from './blog/entities/blog.entity';
+import { User } from './users/entities/user.entity';
 dotenv.config();
 
 
@@ -35,7 +37,7 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Course,Teacher,Category,Chapter,WishList,EnrollCourse],
+      entities: [Course,Teacher,Category,Chapter,WishList,EnrollCourse,Blog,User],
     }),
     BlogModule,
     CoursesModule,
